@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 import "./Timer.css";
 
 const DEFAULT_TIMES = {
-	Focus: 1500, // 25 minutes in seconds
-	"Short Break": 300, // 5 minutes in seconds
-	"Long Break": 1800, // 30 minutes in seconds
+	Focus: 1500, // 25 minutes
+	"Short Break": 300, // 5 minutes
+	"Long Break": 1800, // 30 minutes
 };
 
 export default function Timer({ sessionType = "Focus" }) {
