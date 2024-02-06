@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 
 import "./Timer.css";
 
-const DEFAULT_TIME = 1500;
+const DEFAULT_TIMES = {
+	Focus: 1500, // 25 minutes in seconds
+	"Short Break": 300, // 5 minutes in seconds
+	"Long Break": 1800, // 30 minutes in seconds
+};
 
-export default function Timer() {
-	const [time, setTime] = useState(DEFAULT_TIME);
+export default function Timer({ sessionType = "Focus" }) {
+	const [time, setTime] = useState(DEFAULT_TIMES[sessionType]);
 	const [timerActive, setTimerActive] = useState(false);
 
 	useEffect(() => {
@@ -21,9 +25,13 @@ export default function Timer() {
 		return () => clearInterval(interval);
 	}, [timerActive, time]);
 
+	useEffect(() => {
+		setTime(DEFAULT_TIMES[sessionType]); // Update time when sessionType changes
+	}, [sessionType]);
+
 	const startTimer = () => setTimerActive(true);
 	const pauseTimer = () => setTimerActive(false);
-	const resetTimer = () => setTime(DEFAULT_TIME);
+	const resetTimer = () => setTime(DEFAULT_TIMES[sessionType]);
 
 	return (
 		<div className="Timer">
