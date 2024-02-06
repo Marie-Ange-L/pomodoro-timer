@@ -1,0 +1,17 @@
+.Timer {
+	text-align: center;
+}
+
+.Timer h2 {
+	font-size: 2rem;
+}
+
+.Timer button {
+	margin: 0 0.5rem;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+}
+
+.Timer button:hover {
+	cursor: pointer;
+}
