@@ -32,13 +32,29 @@ export default function Timer({ sessionType = "Focus" }) {
 	const startTimer = () => setTimerActive(true);
 	const pauseTimer = () => setTimerActive(false);
 	const resetTimer = () => setTime(DEFAULT_TIMES[sessionType]);
+	const incrementTime = () => setTime((prevTime) => prevTime + 60); // Increase time by 1 minute
+	const decrementTime = () => {
+		if (time > 60) {
+			setTime((prevTime) => prevTime - 60); // Decrease time by 1 minute
+		}
+	};
 
 	return (
 		<div className="Timer">
-			<h2>{formatTime(time)}</h2>
-			<button onClick={startTimer}>Start</button>
-			<button onClick={pauseTimer}>Pause</button>
-			<button onClick={resetTimer}>Reset</button>
+			<div className="timer-display">
+				<button className="control-button" onClick={decrementTime}>
+					&minus;
+				</button>
+				<h2>{formatTime(time)}</h2>
+				<button className="control-button" onClick={incrementTime}>
+					+
+				</button>
+			</div>
+			<div className="timer-buttons">
+				<button onClick={startTimer}>Start</button>
+				<button onClick={pauseTimer}>Pause</button>
+				<button onClick={resetTimer}>Reset</button>
+			</div>
 		</div>
 	);
 }

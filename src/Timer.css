@@ -3,7 +3,21 @@
 }
 
 .Timer h2 {
-	font-size: 2rem;
+	font-size: 4rem;
+}
+
+.Timer .timer-display {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.Timer .control-button {
+	border: none;
+	background-color: transparent;
+	font-size: 2.5rem;
+	padding: 0;
+	margin: 0 40px;
 }
 
 .Timer button {
