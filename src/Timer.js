@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { FaPlay, FaPause, FaRedo } from "react-icons/fa"; // Import icons from react-icons library
 import "./Timer.css";
 
 const DEFAULT_TIMES = {
@@ -29,8 +29,10 @@ export default function Timer({ sessionType = "Focus" }) {
 		setTime(DEFAULT_TIMES[sessionType]); // Update time when sessionType changes
 	}, [sessionType]);
 
-	const startTimer = () => setTimerActive(true);
-	const pauseTimer = () => setTimerActive(false);
+	const toggleTimer = () => {
+		setTimerActive((prevActive) => !prevActive); // Toggle timer state between running and paused
+	};
+
 	const resetTimer = () => setTime(DEFAULT_TIMES[sessionType]);
 	const incrementTime = () => setTime((prevTime) => prevTime + 60); // Increase time by 1 minute
 	const decrementTime = () => {
@@ -51,9 +53,12 @@ export default function Timer({ sessionType = "Focus" }) {
 				</button>
 			</div>
 			<div className="timer-buttons">
-				<button onClick={startTimer}>Start</button>
-				<button onClick={pauseTimer}>Pause</button>
-				<button onClick={resetTimer}>Reset</button>
+				<button onClick={toggleTimer}>
+					{timerActive ? <FaPause /> : <FaPlay />} {/* Play/Pause icon */}
+				</button>
+				<button onClick={resetTimer}>
+					<FaRedo /> {/* Reset icon */}
+				</button>
 			</div>
 		</div>
 	);
