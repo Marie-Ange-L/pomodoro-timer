@@ -1,9 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Overpass:800);
+
 .Timer {
 	text-align: center;
+	font-family: "Overpass", sans-serif;
+	margin: 80px 0;
 }
 
-.Timer h2 {
-	font-size: 4rem;
+.Timer button {
+	border: none;
+	background-color: transparent;
+	color: #fafafa;
+}
+
+.Timer button:hover {
+	cursor: pointer;
+	scale: 1.1;
+	color: #fff;
 }
 
 .Timer .timer-display {
@@ -12,20 +24,39 @@
 	align-items: center;
 }
 
-.Timer .control-button {
-	border: none;
-	background-color: transparent;
+.Timer .timer-display h1 {
+	font-size: 5rem;
+	text-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	margin: 0 auto;
+	width: 260px;
+	color: #fff;
+}
+
+.Timer .timer-display button {
+	font-family: inherit;
 	font-size: 2.5rem;
 	padding: 0;
-	margin: 0 40px;
+	margin: 0 20px;
+	filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.4));
 }
 
-.Timer button {
-	margin: 0 0.5rem;
-	padding: 0.5rem 1rem;
-	font-size: 1rem;
+.Timer .timer-buttons {
+	margin-top: 40px;
 }
 
-.Timer button:hover {
-	cursor: pointer;
+.Timer .timer-buttons button svg {
+	width: 2em;
+	height: 2em;
+	filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.4));
+}
+
+.Timer .timer-buttons button.playpause-icon {
+	font-size: 1.5rem;
+}
+
+.Timer .timer-buttons button.reset-icon {
+	position: absolute;
+	right: 30px;
+	bottom: 30px;
+	opacity: 0.5;
 }

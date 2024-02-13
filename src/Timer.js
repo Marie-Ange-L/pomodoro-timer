@@ -44,20 +44,16 @@ export default function Timer({ sessionType = "Focus" }) {
 	return (
 		<div className="Timer">
 			<div className="timer-display">
-				<button className="control-button" onClick={decrementTime}>
-					&minus;
-				</button>
-				<h2>{formatTime(time)}</h2>
-				<button className="control-button" onClick={incrementTime}>
-					+
-				</button>
+				<button onClick={decrementTime}>&minus;</button>
+				<h1>{formatTime(time)}</h1>
+				<button onClick={incrementTime}>+</button>
 			</div>
 			<div className="timer-buttons">
-				<button onClick={toggleTimer}>
-					{timerActive ? <FaPause /> : <FaPlay />} {/* Play/Pause icon */}
+				<button className="playpause-icon" onClick={toggleTimer}>
+					{timerActive ? <FaPause /> : <FaPlay />}
 				</button>
-				<button onClick={resetTimer}>
-					<FaRedo /> {/* Reset icon */}
+				<button className="reset-icon" onClick={resetTimer}>
+					<FaRedo />
 				</button>
 			</div>
 		</div>

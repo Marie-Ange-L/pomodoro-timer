@@ -14,9 +14,14 @@ export default function App() {
 
 	return (
 		<div className="App">
-			<h1>Pomodoro Timer App</h1>
-			<SessionButtons handleSessionChange={handleSessionChange} />
-			<Timer sessionType={sessionType} />
+			<div className="container">
+				<div>
+					<SessionButtons handleSessionChange={handleSessionChange} />
+				</div>
+				<div>
+					<Timer sessionType={sessionType} />
+				</div>
+			</div>
 		</div>
 	);
 }

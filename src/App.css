@@ -1,7 +1,26 @@
 .App {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
+	background-image: url(https://source.unsplash.com/random/?free,landscape,nature);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
-.App h1 {
-	color: blueviolet;
+.App .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 65vh;
+	max-width: 350px;
+	margin: 5px;
+	padding: 30px;
+	border-radius: 16px;
+	color: #fafafa;
+	backdrop-filter: blur(0.5rem);
+	box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
 }
