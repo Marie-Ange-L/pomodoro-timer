@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,regular&display:swap);
-
-@import url(https://fonts.googleapis.com/css?family=Overpass:800);
+@import url(https://fonts.googleapis.com/css?family=Overpass:400,800);
 
 .App {
 	height: 100vh;
@@ -32,10 +31,16 @@
 
 .App .footer {
 	position: fixed;
+	display: flex;
 	bottom: 20px;
 	font-family: "Josefin Sans", sans-serif;
 	font-size: 0.8rem;
 	font-weight: 300;
+	color: #fafafa;
+}
+
+.App .footer div {
+	margin: 0 10px;
 }
 
 .App .footer a {

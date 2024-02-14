@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Timer from "./Timer";
 import SessionButtons from "./SessionButtons";
+import Modal from "./Modal";
 
 import "./App.css";
 import "./Timer.css";
 
 export default function App() {
 	const [sessionType, setSessionType] = useState("Focus");
+	const [showModal, setShowModal] = useState(false);
 
 	const handleSessionChange = (type) => {
 		setSessionType(type);
@@ -22,6 +24,14 @@ export default function App() {
 		}
 	};
 
+	const openModal = () => {
+		setShowModal(true);
+	};
+
+	const closeModal = () => {
+		setShowModal(false);
+	};
+
 	return (
 		<div className="App">
 			<div className="container">
@@ -32,10 +42,17 @@ export default function App() {
 					<Timer sessionType={sessionType} />
 				</div>
 			</div>
+			<Modal showModal={showModal} closeModal={closeModal} />
 			<div className="footer">
+				<div className="pomodoro-info">
+					<a href="#" onClick={openModal}>
+						About this app
+					</a>
+				</div>
+				|
 				<div className="restore-default-settings">
 					<a href="#" onClick={restoreDefaultSettings}>
-						Restore Default Settings
+						Restore default settings
 					</a>
 				</div>
 			</div>
