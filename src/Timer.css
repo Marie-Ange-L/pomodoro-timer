@@ -3,19 +3,21 @@
 .Timer {
 	text-align: center;
 	font-family: "Overpass", sans-serif;
-	margin: 80px 0;
+	margin: 90px 0;
 }
 
 .Timer button {
 	border: none;
 	background-color: transparent;
 	color: #fafafa;
+	opacity: 0.5;
 }
 
-.Timer button:hover {
+.Timer button:hover,
+.Timer button:active {
 	cursor: pointer;
 	scale: 1.1;
-	color: #fff;
+	opacity: 1;
 }
 
 .Timer .timer-display {
@@ -58,5 +60,14 @@
 	position: absolute;
 	right: 30px;
 	bottom: 30px;
-	opacity: 0.5;
+}
+
+@media (max-width: 390px) {
+	.Timer .timer-display h1 {
+		font-size: 4.3rem;
+	}
+
+	.Timer .timer-buttons button.playpause-icon {
+		font-size: 1.2rem;
+	}
 }

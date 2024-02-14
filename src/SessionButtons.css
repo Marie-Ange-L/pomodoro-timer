@@ -29,10 +29,19 @@
 }
 
 .SessionButtons .break-buttons .long-break {
-	flex-grow: 4;
+	flex-grow: 11;
 }
 
 .SessionButtons .focus {
 	width: calc(100% - 1rem);
 	font-size: 1.3rem;
+}
+
+@media (max-width: 390px) {
+	.SessionButtons .break-buttons button {
+		font-size: 0.9rem;
+	}
+	.SessionButtons .focus {
+		font-size: 1.2rem;
+	}
 }
