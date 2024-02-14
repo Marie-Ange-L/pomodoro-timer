@@ -43,14 +43,17 @@
 	margin: 0 10px;
 }
 
-.App .footer a {
+.App .footer button {
+	background: none;
+	border: none;
 	color: #fafafa;
+	font-family: inherit;
+	font-weight: 300;
 	text-decoration: none;
 }
 
-.App .footer a:hover {
-	text-decoration: underline;
-	text-underline-offset: 2px;
+.App .footer button:hover {
+	font-weight: 500;
 }
 
 @media (max-width: 390px) {
