@@ -62,6 +62,13 @@
 	font-size: 0.8rem;
 }
 
+.Timer .timer-buttons button.sound-icon {
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	font-size: 0.8rem;
+}
+
 @media (max-width: 390px) {
 	.Timer .timer-display h1 {
 		font-size: 4.3rem;

@@ -18,6 +18,7 @@ const DEFAULT_TIMES = {
 export default function Timer({ sessionType = "Focus" }) {
 	const [time, setTime] = useState(DEFAULT_TIMES[sessionType]);
 	const [timerActive, setTimerActive] = useState(false);
+	const [soundOn, setSoundOn] = useState(false);
 
 	useEffect(() => {
 		let interval;
@@ -28,27 +29,31 @@ export default function Timer({ sessionType = "Focus" }) {
 			}, 1000);
 		} else {
 			clearInterval(interval);
-			if (time === 0) {
+			if (time === 0 && soundOn) {
 				const audio = new Audio(dingSound);
 				audio.play();
 			}
 		}
 		return () => clearInterval(interval);
-	}, [timerActive, time]);
+	}, [timerActive, time, soundOn]);
 
 	useEffect(() => {
-		setTime(DEFAULT_TIMES[sessionType]); // Update time when sessionType changes
+		setTime(DEFAULT_TIMES[sessionType]);
 	}, [sessionType]);
 
 	const toggleTimer = () => {
-		setTimerActive((prevActive) => !prevActive); // Toggle timer state between running and paused
+		setTimerActive((prevActive) => !prevActive);
+	};
+
+	const toggleSound = () => {
+		setSoundOn((prevSoundOn) => !prevSoundOn);
 	};
 
 	const resetTimer = () => setTime(DEFAULT_TIMES[sessionType]);
-	const incrementTime = () => setTime((prevTime) => prevTime + 60); // Increase time by 1 minute
+	const incrementTime = () => setTime((prevTime) => prevTime + 60);
 	const decrementTime = () => {
 		if (time > 60) {
-			setTime((prevTime) => prevTime - 60); // Decrease time by 1 minute
+			setTime((prevTime) => prevTime - 60);
 		}
 	};
 
@@ -60,6 +65,9 @@ export default function Timer({ sessionType = "Focus" }) {
 				<button onClick={incrementTime}>+</button>
 			</div>
 			<div className="timer-buttons">
+				<button className="sound-icon" onClick={toggleSound}>
+					{soundOn ? <FaVolumeUp /> : <FaVolumeMute />}
+				</button>
 				<button className="playpause-icon" onClick={toggleTimer}>
 					{timerActive ? <FaPause /> : <FaPlay />}
 				</button>
