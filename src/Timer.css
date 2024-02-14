@@ -41,6 +41,7 @@
 
 .Timer .save-link button {
 	font-family: "Josefin Sans", sans-serif;
+	font-weight: 300;
 	color: #fafafa;
 	font-size: 0.8rem;
 	opacity: 1;
