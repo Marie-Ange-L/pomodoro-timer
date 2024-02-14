@@ -9,6 +9,7 @@ import {
 import "./Timer.css";
 import dingSound from "./ding-ding-ding.mp3";
 
+const DEFAULT_TIMES_KEY = "defaultTimes";
 const DEFAULT_TIMES = {
 	Focus: 1500, // 25 minutes
 	"Short Break": 300, // 5 minutes
@@ -16,9 +17,14 @@ const DEFAULT_TIMES = {
 };
 
 export default function Timer({ sessionType = "Focus" }) {
-	const [time, setTime] = useState(DEFAULT_TIMES[sessionType]);
+	const [time, setTime] = useState(() => {
+		const storedDefaultTimes =
+			JSON.parse(localStorage.getItem(DEFAULT_TIMES_KEY)) || {};
+		return storedDefaultTimes[sessionType] || DEFAULT_TIMES[sessionType];
+	});
 	const [timerActive, setTimerActive] = useState(false);
 	const [soundOn, setSoundOn] = useState(false);
+	const [showSaveLink, setShowSaveLink] = useState(false);
 
 	useEffect(() => {
 		let interval;
@@ -38,7 +44,11 @@ export default function Timer({ sessionType = "Focus" }) {
 	}, [timerActive, time, soundOn]);
 
 	useEffect(() => {
-		setTime(DEFAULT_TIMES[sessionType]);
+		setTime(() => {
+			const storedDefaultTimes =
+				JSON.parse(localStorage.getItem(DEFAULT_TIMES_KEY)) || {};
+			return storedDefaultTimes[sessionType] || DEFAULT_TIMES[sessionType];
+		});
 	}, [sessionType]);
 
 	const toggleTimer = () => {
@@ -49,12 +59,41 @@ export default function Timer({ sessionType = "Focus" }) {
 		setSoundOn((prevSoundOn) => !prevSoundOn);
 	};
 
-	const resetTimer = () => setTime(DEFAULT_TIMES[sessionType]);
-	const incrementTime = () => setTime((prevTime) => prevTime + 60);
+	const resetTimer = () => {
+		const storedDefaultTimes =
+			JSON.parse(localStorage.getItem(DEFAULT_TIMES_KEY)) || {};
+		const defaultTime =
+			storedDefaultTimes[sessionType] || DEFAULT_TIMES[sessionType];
+		setTime(defaultTime);
+		saveNewDefaultTime(defaultTime);
+	};
+
+	const incrementTime = () => {
+		const newTime = Math.round((time + 60) / 60) * 60; // Round to nearest minute
+		setTime(newTime);
+		setShowSaveLink(true);
+	};
+
 	const decrementTime = () => {
 		if (time > 60) {
-			setTime((prevTime) => prevTime - 60);
+			const newTime = Math.round((time - 60) / 60) * 60; // Round to nearest minute
+			setTime(newTime);
+			setShowSaveLink(true);
 		}
+	};
+
+	const saveNewDefaultTime = (newTime) => {
+		const storedDefaultTimes =
+			JSON.parse(localStorage.getItem(DEFAULT_TIMES_KEY)) || {};
+		const updatedDefaultTimes = {
+			...storedDefaultTimes,
+			[sessionType]: newTime,
+		};
+		localStorage.setItem(
+			DEFAULT_TIMES_KEY,
+			JSON.stringify(updatedDefaultTimes)
+		);
+		setShowSaveLink(false);
 	};
 
 	return (
@@ -63,6 +102,14 @@ export default function Timer({ sessionType = "Focus" }) {
 				<button onClick={decrementTime}>−</button>
 				<h1>{formatTime(time)}</h1>
 				<button onClick={incrementTime}>+</button>
+			</div>
+			<div className="save-link">
+				&nbsp;
+				{showSaveLink && (
+					<button onClick={() => saveNewDefaultTime(time)}>
+						Save change for next session
+					</button>
+				)}
 			</div>
 			<div className="timer-buttons">
 				<button className="sound-icon" onClick={toggleSound}>

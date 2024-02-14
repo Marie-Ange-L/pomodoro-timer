@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Overpass:800);
-
 .Timer {
 	text-align: center;
 	font-family: "Overpass", sans-serif;
@@ -41,8 +39,15 @@
 	filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.4));
 }
 
+.Timer .save-link button {
+	font-family: "Josefin Sans", sans-serif;
+	color: #fafafa;
+	font-size: 0.8rem;
+	opacity: 1;
+}
+
 .Timer .timer-buttons {
-	margin-top: 40px;
+	margin-top: 30px;
 }
 
 .Timer .timer-buttons button svg {
