@@ -45,15 +45,13 @@ export default function App() {
 			<Modal showModal={showModal} closeModal={closeModal} />
 			<div className="footer">
 				<div className="pomodoro-info">
-					<a href="#" onClick={openModal}>
-						About this app
-					</a>
+					<button onClick={openModal}>About this app</button>
 				</div>
 				|
 				<div className="restore-default-settings">
-					<a href="#" onClick={restoreDefaultSettings}>
+					<button onClick={restoreDefaultSettings}>
 						Restore default settings
-					</a>
+					</button>
 				</div>
 			</div>
 		</div>
