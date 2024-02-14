@@ -16,6 +16,10 @@
 	background-color: #fafafa;
 }
 
+.SessionButtons button.active {
+	background-color: #fafafa;
+}
+
 .SessionButtons .break-buttons {
 	display: flex;
 }
