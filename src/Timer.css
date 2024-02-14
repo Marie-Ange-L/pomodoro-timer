@@ -29,7 +29,7 @@
 .Timer .timer-display h1 {
 	font-size: 5rem;
 	text-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-	margin: 0 auto;
+	margin: 0 1rem;
 	width: 260px;
 	color: #fff;
 }
@@ -38,7 +38,6 @@
 	font-family: inherit;
 	font-size: 2.5rem;
 	padding: 0;
-	margin: 0 20px;
 	filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.4));
 }
 
@@ -58,8 +57,9 @@
 
 .Timer .timer-buttons button.reset-icon {
 	position: absolute;
-	right: 30px;
-	bottom: 30px;
+	right: 20px;
+	bottom: 20px;
+	font-size: 0.8rem;
 }
 
 @media (max-width: 390px) {

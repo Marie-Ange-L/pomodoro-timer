@@ -44,7 +44,7 @@ export default function Timer({ sessionType = "Focus" }) {
 	return (
 		<div className="Timer">
 			<div className="timer-display">
-				<button onClick={decrementTime}>&minus;</button>
+				<button onClick={decrementTime}>−</button>
 				<h1>{formatTime(time)}</h1>
 				<button onClick={incrementTime}>+</button>
 			</div>
