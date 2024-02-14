@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { FaPlay, FaPause, FaRedo } from "react-icons/fa"; // Import icons from react-icons library
+import {
+	FaPlay,
+	FaPause,
+	FaRedo,
+	FaVolumeUp,
+	FaVolumeMute,
+} from "react-icons/fa"; // Import icons from react-icons library
 import "./Timer.css";
+import dingSound from "./ding-ding-ding.mp3";
 
 const DEFAULT_TIMES = {
 	Focus: 1500, // 25 minutes
@@ -21,6 +28,10 @@ export default function Timer({ sessionType = "Focus" }) {
 			}, 1000);
 		} else {
 			clearInterval(interval);
+			if (time === 0) {
+				const audio = new Audio(dingSound);
+				audio.play();
+			}
 		}
 		return () => clearInterval(interval);
 	}, [timerActive, time]);
