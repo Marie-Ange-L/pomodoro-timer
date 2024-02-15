@@ -40,7 +40,7 @@
 	filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.4));
 }
 
-.Timer .save-link button {
+.Timer .timer-save-link button {
 	font-family: "Josefin Sans", sans-serif;
 	font-weight: 300;
 	color: #fafafa;

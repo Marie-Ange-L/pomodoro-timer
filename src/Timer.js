@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
-import {
-	FaPlay,
-	FaPause,
-	FaRedo,
-	FaVolumeUp,
-	FaVolumeMute,
-} from "react-icons/fa"; // Import icons from react-icons library
 import "./Timer.css";
 import dingSound from "./ding-ding-ding.mp3";
+import TimerDisplay from "./TimerDisplay";
+import TimerSaveLink from "./TimerSaveLink";
+import TimerControls from "./TimerControls";
 
 const DEFAULT_TIMES_KEY = "defaultTimes";
 const DEFAULT_TIMES = {
@@ -117,36 +113,23 @@ export default function Timer({ sessionType = "Focus" }) {
 
 	return (
 		<div className="Timer">
-			<div className="timer-display">
-				<button onClick={decrementTime}>−</button>
-				<h1>{formatTime(time)}</h1>
-				<button onClick={incrementTime}>+</button>
-			</div>
-			<div className="save-link">
-				&nbsp;
-				{showSaveLink && (
-					<button onClick={() => saveNewDefaultTime(time)}>
-						Save change for next session
-					</button>
-				)}
-			</div>
-			<div className="timer-buttons">
-				<button className="sound-icon" onClick={toggleSound}>
-					{soundOn ? <FaVolumeUp /> : <FaVolumeMute />}
-				</button>
-				<button className="playpause-icon" onClick={toggleTimer}>
-					{timerActive ? <FaPause /> : <FaPlay />}
-				</button>
-				<button className="reset-icon" onClick={resetTimer}>
-					<FaRedo />
-				</button>
-			</div>
+			<TimerDisplay
+				time={time}
+				decrementTime={decrementTime}
+				incrementTime={incrementTime}
+			/>
+			<TimerSaveLink
+				showSaveLink={showSaveLink}
+				saveNewDefaultTime={saveNewDefaultTime}
+				time={time}
+			/>
+			<TimerControls
+				soundOn={soundOn}
+				toggleSound={toggleSound}
+				timerActive={timerActive}
+				toggleTimer={toggleTimer}
+				resetTimer={resetTimer}
+			/>
 		</div>
 	);
-}
-
-function formatTime(seconds) {
-	const minutes = Math.floor(seconds / 60);
-	const remainingSeconds = seconds % 60;
-	return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
 }
