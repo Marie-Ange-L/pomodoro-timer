@@ -36,16 +36,24 @@ export default function Timer({ sessionType = "Focus" }) {
 					const audio = new Audio(dingSound);
 					audio.play();
 				}
-				document.title = "Session completed!";
+				let dynamicTitle = false;
+				interval = setInterval(() => {
+					dynamicTitle = !dynamicTitle;
+					document.title = dynamicTitle
+						? "⌛ Session completed!"
+						: "✅ Click OK to start your next session";
+				}, 1000);
 				setTimeout(() => {
 					if (document.hasFocus()) {
-						alert("Session completed! Click OK to start your next session.");
+						alert(
+							"⌛ Session completed!\n\n✅ Click OK to start your next session."
+						);
 						window.location.reload();
 					} else {
 						const reloadPage = () => {
 							if (document.hasFocus()) {
 								alert(
-									"Session completed! Click OK to start your next session."
+									"⌛ Session completed!\n\n✅ Click OK to start your next session."
 								);
 								window.removeEventListener("focus", reloadPage);
 								window.location.reload();
