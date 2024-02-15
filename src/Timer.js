@@ -31,9 +31,11 @@ export default function Timer({ sessionType = "Focus" }) {
 			}, 1000);
 		} else {
 			clearInterval(interval);
-			if (time === 0 && soundOn) {
-				const audio = new Audio(dingSound);
-				audio.play();
+			if (time === 0) {
+				if (soundOn) {
+					const audio = new Audio(dingSound);
+					audio.play();
+				}
 				document.title = "Session completed!";
 				setTimeout(() => {
 					if (document.hasFocus()) {
