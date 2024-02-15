@@ -23,7 +23,7 @@ export default function Timer({ sessionType = "Focus" }) {
 		return storedDefaultTimes[sessionType] || DEFAULT_TIMES[sessionType];
 	});
 	const [timerActive, setTimerActive] = useState(false);
-	const [soundOn, setSoundOn] = useState(false);
+	const [soundOn, setSoundOn] = useState(true);
 	const [showSaveLink, setShowSaveLink] = useState(false);
 
 	useEffect(() => {
@@ -38,8 +38,27 @@ export default function Timer({ sessionType = "Focus" }) {
 			if (time === 0 && soundOn) {
 				const audio = new Audio(dingSound);
 				audio.play();
+				document.title = "Session completed!";
+				setTimeout(() => {
+					if (document.hasFocus()) {
+						alert("Session completed! Click OK to start your next session.");
+						window.location.reload();
+					} else {
+						const reloadPage = () => {
+							if (document.hasFocus()) {
+								alert(
+									"Session completed! Click OK to start your next session."
+								);
+								window.removeEventListener("focus", reloadPage);
+								window.location.reload();
+							}
+						};
+						window.addEventListener("focus", reloadPage);
+					}
+				}, 1000);
 			}
 		}
+
 		return () => clearInterval(interval);
 	}, [timerActive, time, soundOn]);
 
