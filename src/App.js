@@ -6,8 +6,10 @@ import Modal from "./Modal";
 import "./App.css";
 import "./Timer.css";
 
+const DEFAULT_SESSION_TYPE = "Focus";
+
 export default function App() {
-	const [sessionType, setSessionType] = useState("Focus");
+	const [sessionType, setSessionType] = useState(DEFAULT_SESSION_TYPE);
 	const [showModal, setShowModal] = useState(false);
 
 	const handleSessionChange = (type) => {
@@ -35,12 +37,8 @@ export default function App() {
 	return (
 		<div className="App">
 			<div className="container">
-				<div>
-					<SessionButtons handleSessionChange={handleSessionChange} />
-				</div>
-				<div>
-					<Timer sessionType={sessionType} />
-				</div>
+				<SessionButtons handleSessionChange={handleSessionChange} />
+				<Timer sessionType={sessionType} />
 			</div>
 			<Modal showModal={showModal} closeModal={closeModal} />
 			<div className="footer">

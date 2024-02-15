@@ -94,18 +94,18 @@ export default function Timer({ sessionType = "Focus" }) {
 	};
 
 	const incrementTime = () => {
-		const newTime = Math.round((time + 60) / 60) * 60; // Round to nearest minute
+		const newTime = Math.round((time + 60) / 60) * 60;
 		setTime(newTime);
 		setShowSaveLink(true);
 	};
-
 	const decrementTime = () => {
 		if (time > 60) {
-			const newTime = Math.round((time - 60) / 60) * 60; // Round to nearest minute
+			const newTime = Math.round((time - 60) / 60) * 60;
 			setTime(newTime);
 			setShowSaveLink(true);
 		}
 	};
+	// both rounded to the nearest minute to avoid fractional minutes
 
 	const saveNewDefaultTime = (newTime) => {
 		const storedDefaultTimes =
