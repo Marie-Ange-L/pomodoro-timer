@@ -10,16 +10,42 @@ export default function Modal({ showModal, closeModal }) {
 						<span className="modal-close" onClick={closeModal}>
 							&times;
 						</span>
-						<h2>Pomodoro Technique</h2>
+						<h2>About this app</h2>
 						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Consectetur consequatur quod nemo esse expedita possimus veritatis
-							sunt necessitatibus animi alias, voluptatum quas harum obcaecati
-							praesentium, voluptas modi, in dignissimos? Mollitia ex optio
-							voluptate delectus magnam modi sunt quam impedit perferendis,
-							molestiae aut iste animi id quaerat. Obcaecati nulla dolorum
-							velit?
+							This app is a simple Pomodoro timer that helps you focus and
+							manage your time effectively!
 						</p>
+						<p>
+							It utilises the Pomodoro Technique, a&nbsp;time management method,
+							to improve focus and productivity.
+						</p>
+						<ul>
+							<li>
+								🕒 Features customisable timers for focus sessions, short
+								breaks, and long breaks.
+							</li>
+							<li>
+								🔊 Provides a&nbsp;sound alert at the end of each session to
+								notify you of the completion!
+							</li>
+							<li>🔧 Allows you to restore default settings.</li>
+						</ul>
+						<p className="tomato">🍅 🍅 🍅 🍅 🍅 🍅 🍅</p>
+						<small>
+							Learn more about
+							<br />
+							the Pomodoro Technique
+							<br />
+							<a
+								href="https://en.wikipedia.org/wiki/Pomodoro_Technique"
+								title="The Pomodoro Technique page on Wikipedia (opens in new tab)"
+								target="_blank"
+								rel="noreferrer"
+							>
+								on Wikipedia
+							</a>
+							.
+						</small>
 					</div>
 				</div>
 			)}
