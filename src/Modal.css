@@ -82,7 +82,7 @@
 	font-size: 24px;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
 	.Modal .modal-content {
 		width: auto;
 		max-width: 75%;

@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,regular&display:swap);
-@import url(https://fonts.googleapis.com/css?family=Overpass:400,800);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,regular&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Overpass:400,800&display=swap);
 
 .App {
 	height: 100vh;
@@ -58,10 +58,12 @@
 	font-weight: 500;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
 	.App .container {
 		width: auto;
 		max-width: 75%;
+		min-height: auto;
 		padding: 20px;
+		justify-content: space-around;
 	}
 }

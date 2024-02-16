@@ -81,11 +81,7 @@
 	font-size: 0.8rem;
 }
 
-@media (max-width: 420px) {
-	.Timer {
-		margin: 70px 0;
-	}
-
+@media (max-width: 480px) {
 	.Timer .timer-buttons {
 		margin-top: 15px;
 	}

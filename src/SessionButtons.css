@@ -39,7 +39,11 @@
 	font-size: 1.3rem;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
+	.SessionButtons button {
+		padding: 0.7rem;
+	}
+
 	.SessionButtons .break-buttons button {
 		font-size: 0.9rem;
 	}
