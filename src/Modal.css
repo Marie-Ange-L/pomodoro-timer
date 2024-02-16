@@ -1,6 +1,7 @@
 .Modal {
 	font-family: "Overpass", sans-serif;
 	text-align: left;
+	color: #2e2626;
 }
 
 .Modal .modal-container {
@@ -61,6 +62,16 @@
 .Modal .modal-content small {
 	display: block;
 	text-align: center;
+	line-height: 1.2rem;
+}
+
+.Modal a {
+	color: inherit;
+	text-underline-offset: 2px;
+}
+
+.Modal a:hover {
+	text-decoration: none;
 }
 
 .Modal .modal-close {
@@ -71,7 +82,7 @@
 	font-size: 24px;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 420px) {
 	.Modal .modal-content {
 		width: auto;
 		max-width: 75%;

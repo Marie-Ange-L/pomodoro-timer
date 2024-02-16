@@ -30,7 +30,7 @@ export default function Modal({ showModal, closeModal }) {
 							</li>
 							<li>🔧 Allows you to restore default settings.</li>
 						</ul>
-						<p className="tomato">🍅 🍅 🍅 🍅 🍅 🍅 🍅</p>
+
 						<small>
 							Learn more about
 							<br />
@@ -43,6 +43,29 @@ export default function Modal({ showModal, closeModal }) {
 								rel="noreferrer"
 							>
 								on Wikipedia
+							</a>
+							.
+						</small>
+						<p className="tomato">🍅 🍅 🍅 🍅 🍅 🍅 🍅</p>
+						<small>
+							Coded by{" "}
+							<a
+								href="https://www.marieange.dev/"
+								title="Marie-Ange's portfolio (opens in new tab)"
+								target="_blank"
+								rel="noreferrer"
+							>
+								Marie-Ange L.
+							</a>
+							<br />
+							Random free images from{" "}
+							<a
+								href="https://unsplash.com/fr/s/photos/landscape%2Cnature?license=free"
+								title="Unsplash (opens in new tab)"
+								target="_blank"
+								rel="noreferrer"
+							>
+								Unsplash
 							</a>
 							.
 						</small>

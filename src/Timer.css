@@ -46,6 +46,11 @@
 	color: #fafafa;
 	font-size: 0.8rem;
 	opacity: 1;
+	text-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.Timer .timer-save-link button:hover {
+	font-weight: 500;
 }
 
 .Timer .timer-buttons {
@@ -76,7 +81,16 @@
 	font-size: 0.8rem;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 420px) {
+	.Timer {
+		margin-top: 20px;
+		margin-bottom: 90px;
+	}
+
+	.Timer .timer-buttons {
+		margin-top: 15px;
+	}
+
 	.Timer .timer-display h1 {
 		font-size: 4.3rem;
 	}

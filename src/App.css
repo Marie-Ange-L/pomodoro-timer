@@ -50,13 +50,15 @@
 	font-family: inherit;
 	font-weight: 300;
 	text-decoration: none;
+	filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.8));
 }
 
 .App .footer button:hover {
+	cursor: pointer;
 	font-weight: 500;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 420px) {
 	.App .container {
 		width: auto;
 		max-width: 75%;
