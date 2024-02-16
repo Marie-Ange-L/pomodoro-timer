@@ -83,8 +83,7 @@
 
 @media (max-width: 420px) {
 	.Timer {
-		margin-top: 20px;
-		margin-bottom: 90px;
+		margin: 70px 0;
 	}
 
 	.Timer .timer-buttons {
