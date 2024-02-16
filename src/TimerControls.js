@@ -16,13 +16,17 @@ export default function TimerControls({
 }) {
 	return (
 		<div className="timer-buttons">
-			<button className="sound-icon" onClick={toggleSound}>
+			<button
+				title="Turn Ding! on or off"
+				className="sound-icon"
+				onClick={toggleSound}
+			>
 				{soundOn ? <FaVolumeUp /> : <FaVolumeMute />}
 			</button>
 			<button className="playpause-icon" onClick={toggleTimer}>
 				{timerActive ? <FaPause /> : <FaPlay />}
 			</button>
-			<button className="reset-icon" onClick={resetTimer}>
+			<button title="Reload Timer" className="reset-icon" onClick={resetTimer}>
 				<FaRedo />
 			</button>
 		</div>

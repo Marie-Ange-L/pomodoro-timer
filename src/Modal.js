@@ -12,23 +12,26 @@ export default function Modal({ showModal, closeModal }) {
 						</span>
 						<h2>About this app</h2>
 						<p>
-							This app is a simple Pomodoro timer that helps you focus and
-							manage your time effectively!
+							This app is a Pomodoro timer, designed with a minimalist approach
+							and essential features to aid in efficient work management!
 						</p>
 						<p>
-							It utilises the Pomodoro Technique, a&nbsp;time management method,
-							to improve focus and productivity.
+							It integrates the Pomodoro Technique, a&nbsp;time management
+							method, to improve focus and boost productivity.
 						</p>
 						<ul>
 							<li>
-								🕒 Features customisable timers for focus sessions, short
-								breaks, and long breaks.
+								⏳ Features a&nbsp;customisable timer that can be saved for your
+								next session.
 							</li>
 							<li>
-								🔊 Provides a&nbsp;sound alert at the end of each session to
-								notify you of the completion!
+								🔊 Provides a&nbsp;light "ding" sound alert at the end of each
+								session.
 							</li>
-							<li>🔧 Allows you to restore default settings.</li>
+							<li>
+								🌿 Offers calming nature visuals to enhance peace and
+								tranquility.
+							</li>
 						</ul>
 
 						<small>

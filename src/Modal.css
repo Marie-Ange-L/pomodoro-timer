@@ -16,15 +16,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	overflow: hidden;
 }
 
 .Modal .modal-content {
 	position: relative;
 	background-color: #fafafa;
 	padding: 20px;
-	width: 290px;
-	min-height: 65vh;
+	width: 320px;
+	max-height: 75vh;
 	border-radius: 5px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 	overflow-y: auto;
@@ -94,5 +93,9 @@
 	.Modal .modal-content ul {
 		font-size: 0.8rem;
 		margin: 0.4rem 0.3rem;
+	}
+
+	.Modal .modal-content li {
+		text-indent: -20px;
 	}
 }
