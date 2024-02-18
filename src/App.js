@@ -47,6 +47,7 @@ export default function App() {
 
 	return (
 		<div className="App" style={{ backgroundImage: `url(${backgroundUrl})` }}>
+			<div className="gradient"></div>
 			<div className="container">
 				<SessionButtons handleSessionChange={handleSessionChange} />
 				<Timer sessionType={sessionType} />

@@ -19,6 +19,10 @@
 	opacity: 1;
 }
 
+.Timer button:active {
+	scale: 0.9;
+}
+
 .Timer .timer-display {
 	display: flex;
 	justify-content: center;
@@ -44,13 +48,14 @@
 	font-family: "Josefin Sans", sans-serif;
 	font-weight: 300;
 	color: #fafafa;
-	font-size: 1rem;
+	font-size: 0.9rem;
 	opacity: 1;
 	text-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .Timer .timer-save-link button:hover {
-	font-weight: 500;
+	font-size: 0.85rem;
+	text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
 .Timer .timer-buttons {
