@@ -69,12 +69,12 @@ export default function Modal({ showModal, closeModal }) {
 							<br />
 							Random free images from{" "}
 							<a
-								href="https://unsplash.com/fr/s/photos/landscape%2Cnature?license=free"
-								title="Unsplash (opens in new tab)"
+								href="https://picsum.photos/"
+								title="The Lorem Ipsum for photos (opens in new tab)"
 								target="_blank"
 								rel="noreferrer"
 							>
-								Unsplash
+								Lorem Picsum
 							</a>
 							.
 						</small>
