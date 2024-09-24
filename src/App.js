@@ -12,7 +12,7 @@ export default function App() {
 	const [sessionType, setSessionType] = useState(DEFAULT_SESSION_TYPE);
 	const [showModal, setShowModal] = useState(false);
 	const [backgroundUrl, setBackgroundUrl] = useState(
-		"https://source.unsplash.com/random/?free,landscape,nature"
+		"https://picsum.photos/1200/800"
 	);
 
 	const handleSessionChange = (type) => {
@@ -39,7 +39,7 @@ export default function App() {
 
 	const refreshBackgroundImage = () => {
 		const img = new Image();
-		img.src = `https://source.unsplash.com/random/?free,landscape,nature&_=${Date.now()}`;
+		img.src = `https://picsum.photos/1200/800?_=${Date.now()}`;
 		img.onload = () => {
 			setBackgroundUrl(img.src);
 		};

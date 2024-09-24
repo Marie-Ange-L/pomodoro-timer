@@ -10,11 +10,11 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	background-image: url(https://source.unsplash.com/random/?free,landscape,nature);
+	background-image: url(https://picsum.photos/1200/800);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	transition: background-image 6s ease;
+	transition: background-image 4s ease;
 }
 
 .App .gradient {
